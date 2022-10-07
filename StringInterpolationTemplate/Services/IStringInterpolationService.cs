@@ -12,5 +12,4 @@ public interface IStringInterpolationService
     string Number08();
     string Number09();
     string Number10();
-    string Number11();
 }

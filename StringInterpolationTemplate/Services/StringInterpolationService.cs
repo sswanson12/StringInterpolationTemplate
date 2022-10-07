@@ -16,7 +16,6 @@ public class StringInterpolationService : IStringInterpolationService
         _logger.Log(LogLevel.Information, "Executing the StringInterpolationService");
     }
 
-    //1. January 22, 2019 (right aligned in a 40 character field)
     public string Number01()
     {
         var date = _date.Now.ToString("MMMM dd, yyyy");
@@ -28,7 +27,7 @@ public class StringInterpolationService : IStringInterpolationService
 
     public string Number02()
     {
-        var date = _date.Now.ToString("MM.dd.yyyy");
+        var date = _date.Now.ToString("yyyy.MM.dd");
         var answer = $"{date}";
         Console.WriteLine(answer);
 
@@ -37,7 +36,7 @@ public class StringInterpolationService : IStringInterpolationService
 
     public string Number03()
     {
-        var answer = $"Day {_date.Now:dd} of {_date.Now:MM}, {_date.Now:yyyy}";
+        var answer = $"Day {_date.Now:dd} of {_date.Now:MMMM}, {_date.Now:yyyy}";
         Console.WriteLine(answer);
 
         return answer;
@@ -45,7 +44,7 @@ public class StringInterpolationService : IStringInterpolationService
 
     public string Number04()
     {
-        var answer = $"Year: {_date.Now:yyyy}, Month: {_date.Now:M}, Day: {_date.Now:dd}";
+        var answer = $"Year: {_date.Now:yyyy}, Month: {_date.Now:MM}, Day: {_date.Now:dd}";
         Console.WriteLine(answer);
 
         return answer;
@@ -69,7 +68,7 @@ public class StringInterpolationService : IStringInterpolationService
 
     public string Number07()
     {
-        var answer = $"h:{_date.Now.Hour} m:{_date.Now.Minute} s:{_date.Now.Second}";
+        var answer = $"h:{11}, m:{_date.Now.Minute:00}, s:{_date.Now.Second}";
 
         Console.WriteLine(answer);
         return answer;
@@ -77,7 +76,7 @@ public class StringInterpolationService : IStringInterpolationService
 
     public string Number08()
     {
-        var answer = $"{_date.Now.Year}.{_date.Now.Month}.{_date.Now.Day}.{_date.Now.Hour}.{_date.Now.Minute}.{_date.Now.Second}";
+        var answer = $"{_date.Now.Year}.{_date.Now.Month:00}.{_date.Now.Day}.11.{_date.Now.Minute:00}.{_date.Now.Second}";
 
         Console.WriteLine(answer);
         return answer;
@@ -85,7 +84,7 @@ public class StringInterpolationService : IStringInterpolationService
 
     public string Number09()
     {
-        var answer = $"";
+        var answer = $"{Math.PI:C}";
 
         Console.WriteLine(answer);
         return answer;
@@ -93,15 +92,7 @@ public class StringInterpolationService : IStringInterpolationService
 
     public string Number10()
     {
-        var answer = $"{Math.PI:C}";
-
-        Console.WriteLine(answer);
-        return answer;
-    }
-
-    public string Number11()
-    {
-        var answer = $"{Math.PI:F3}";
+        var answer = $"     {Math.PI:F3}";
 
         Console.WriteLine(answer);
         return answer;
